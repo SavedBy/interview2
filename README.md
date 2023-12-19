@@ -1,30 +1,32 @@
 # Interview Round 2
 
-This is a live coding session that should take about 45-60 mins.
+This is a live coding session that should take about 1-2 hrs.
 We'll be piggy-backing off of the project done during round 1.
-Take 5-10 to plan out-loud and prioritize features.
-Most of the HTML and CSS has been completed for you.
-This part of the interview we will go through your planning and development process to implement the objectives below. Think aloud and we'll ask questions along the way. This is "open book", don't be discouraged to look up anything.
+Take 5-10 mins to plan out-loud and prioritize features.
+Most of the HTML and CSS has been completed for you and is found in this repo.
+This part of the interview we will go through your planning and development process to implement the objectives below.
+Think aloud and we'll ask questions along the way. This is "open book", don't be discouraged to look up anything.
+Cart API docs are found below.
 
 ### I'll be adding:
 
 - A pre-developed cart page with element templates. (/src/static/cart.html)
-- Additional classes to the CSS file. (/src/static/index.css)
+- Additional classes to your CSS file. (/src/static/index.css)
 - A Cart API to the server.
-- 3 screenshots to go off of.
+- 3 screenshots to use a reference.
+- An empty cart.js file. (/src/static/cart.js)
 
 ### Objectives:
 
 - Implement the "Add To Cart" feature on products. (Refer to /resources/Product-add-to-cart.png)
 - Cart icon navigates to /cart
-- Logic in app.js works for both pages
 - Fetch and render the cart
 - Use the empty cart template
 - Use the product template
-- Implement "loading cart"
-- Remove from cart feature
 - Change quantity feature
-- On "Add to cart" UI feedback (non-blocking)
+- Calculate total line item price with quantity
+- Calculate cart total price
+- Updates to cart API rerenders the cart items
 
 # Cart API Docs
 
