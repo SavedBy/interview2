@@ -7,13 +7,12 @@ import products from "./data/products.json" assert { type: "json" };
 export default function cartAPI(app) {
 	// GET CART
 	app.get("/api/cart", (req, res) => {
-		setTimeout(() => {
-			res.send(cart);
-		}, 2000);
+		res.send(cart);
 	});
 
 	// ADD TO CART
 	app.post("/api/cart/add", (req, res) => {
+		if (!req.body) return res.sendStatus(400);
 		try {
 			const productsToAdd = Object.entries(req.body).map(([id, quantity]) => {
 				const product = products.find((p) => p.id === Number(id));
@@ -33,6 +32,7 @@ export default function cartAPI(app) {
 
 	// REMOVE FROM CART
 	app.post("/api/cart/remove", (req, res) => {
+		if (!req.body) return res.sendStatus(400);
 		for (const id of req.body) {
 			cart.removeFromCart(id);
 		}
@@ -41,9 +41,11 @@ export default function cartAPI(app) {
 
 	// UPDATE QUANTITY
 	app.post("/api/cart/update", (req, res) => {
+		if (!req.body) return res.sendStatus(400);
 		try {
 			const productsToUpdate = Object.entries(req.body).map(([id, quantity]) => {
-				const cartItem = cart.items.find((p) => p.id === Number(id));
+				const cartItem = cart.items.find((p) => Number(p.id) === Number(id));
+
 				if (!cartItem) throw `Cart Item (${id}) does not exist`;
 				return { id, quantity };
 			});
@@ -54,7 +56,7 @@ export default function cartAPI(app) {
 
 			res.send(cart);
 		} catch (e) {
-			res.status(400).send(e);
+			res.status(400).send(e.message);
 		}
 	});
 }
@@ -74,14 +76,14 @@ class Cart {
 				title: product.title,
 				price: product.price,
 				image: product.images[0],
-				quantity,
+				quantity: +quantity,
 			});
 		}
 	}
 
 	updateQuantity(id, quantity) {
-		const cartItem = cart.items.find((item) => item.id === id);
-		cartItem.quantity = quantity;
+		const cartItem = cart.items.find((item) => +item.id === +id);
+		cartItem.quantity = +quantity;
 	}
 
 	removeFromCart(id) {
