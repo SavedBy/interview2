@@ -13,15 +13,15 @@ Cart API docs are found below.
 - A pre-developed cart page with element templates. (/src/static/cart.html)
 - Additional classes to your CSS file. (/src/static/index.css)
 - A Cart API to the server.
-- 3 screenshots to use a reference.
-- An empty cart.js file. (/src/static/cart.js)
+- 3 screenshots to use as a reference.
+- A boilerplate cart.js file. (/src/static/cart.js)
 
 ### Objectives:
 
 - Implement the "Add To Cart" feature on products. (Refer to /resources/Product-add-to-cart.png)
 - Cart icon navigates to /cart
-- Fetch and render the cart
 - Use the empty cart template
+- Fetch and render the cart
 - Use the product template
 - Change quantity feature
 - Calculate total line item price with quantity
