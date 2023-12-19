@@ -18,15 +18,15 @@ Cart API docs are found below.
 
 ### Objectives:
 
-- Implement the "Add To Cart" feature on products. (Refer to /resources/Product-add-to-cart.png)
-- Cart icon navigates to /cart
-- Use the empty cart template
-- Fetch and render the cart
-- Use the product template
-- Change quantity feature
-- Calculate total line item price with quantity
-- Calculate cart total price
-- Updates to cart API rerenders the cart items
+- [ ] Implement the "Add To Cart" feature on products. (Refer to /resources/Product-add-to-cart.png)
+- [ ] Cart icon navigates to /cart
+- [ ] Use the empty cart template
+- [ ] Fetch and render the cart
+- [ ] Use the product template
+- [ ] Change quantity feature
+- [ ] Calculate total line item price with quantity
+- [ ] Calculate cart total price
+- [ ] Updates to cart API rerenders the cart items
 
 # Cart API Docs
 
